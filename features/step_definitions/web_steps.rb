@@ -276,3 +276,10 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+# TWS was here.
+Then /^.* payload.+ contain.* "(.+)"\s*$/ do |htmlElement|
+  # Using the /m for multi-line regex.
+  page.body.should =~ /#{htmlElement}/m
+end
+
